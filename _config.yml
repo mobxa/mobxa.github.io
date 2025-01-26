@@ -1,7 +1,7 @@
 title: LP Devs Blog
 description: Sharing experiences about programming.
 
-url: https://lpdevs.github.io
+url: https://mobxa.github.io
 baseurl: ""
 paginate_path: "blog/page:num/"
 permalink: blog/:title/
