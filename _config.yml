@@ -1,0 +1,28 @@
+title: LP Devs Blog
+description: Sharing experiences about programming.
+
+url: https://lpdevs.github.io
+baseurl: ""
+paginate_path: "blog/page:num/"
+permalink: blog/:title/
+
+markdown: kramdown
+highlighter: rouge
+gems: [jekyll-paginate]
+paginate: 5
+
+navigation:
+ - title: Home
+   url: /index.html
+ - title: About
+   url: /about
+ - title: Contact
+   url: /contact
+
+social:
+   github: lpdevs
+   twitter: lpdevss
+   facebook: lpdevs
+   email: lampv606@gmail.com
+
+google_analytics: "UA-96543695-2"
