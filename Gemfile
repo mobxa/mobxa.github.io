@@ -1,9 +1,7 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
-gem "jekyll"
-gem "jekyll-paginate"
-gem "susy"
-gem "normalize-scss"
-gem "compass"
-gem "sass"
-gem "support-for"
+gem 'github-pages', group: :jekyll_plugins
+gem 'jekyll-seo-tag'
+gem 'jekyll-paginate'
+gem 'jekyll-coffeescript'
+gem 'jekyll-commonmark-ghpages'
