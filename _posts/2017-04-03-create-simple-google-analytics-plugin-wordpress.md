@@ -2,7 +2,7 @@
 layout: post
 title:  "Simple Google Analytics plugin for Wordpress"
 date:   2017-04-03 24:44:00 +0700
-categories: [Wordpress]
+categories: [Wordpress, Ubuntu]
 tags: [Plugin Wordpress, Google Analytics] 
 ---
 
