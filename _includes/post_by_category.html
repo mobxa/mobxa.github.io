@@ -1,5 +1,3 @@
-<div class="home" id="home">
-  <h1 class="pageTitle">{{ page.title }}</h1>
 {% assign filtered_posts = site.posts | where: "categories", page.category %}
 
 {% paginate filtered_posts by 5 %}
@@ -21,10 +19,11 @@
 
   <div class="pagination">
     {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="previous button__outline">Newer Posts</a> 
+      <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="previous button__outline">Newer Posts</a>
     {% endif %}
     {% if paginator.next_page %}
       <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="next button__outline">Older Posts</a>
     {% endif %}
   </div>
 {% endpaginate %}
+
