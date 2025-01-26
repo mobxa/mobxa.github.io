@@ -1,16 +1,19 @@
 <div class="home" id="home">
-  <h1 class="pageTitle">{{page.title}}</h1>
+  <h1 class="pageTitle">{{ page.title }}</h1>
   <ul class="posts noList">
-    {% for post in site.posts %}
-      {% if post.categories contains page.category %}
-  		<li>
-	        <span class="date">{{ post.date | date: '%B %d, %Y' }}</span>
-	        <h3><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
-	        <p class="description">{% if post.description %}{{ post.description | strip_html | strip_newlines | truncate: 250 }}{% else %}{{ post.content | strip_html | strip_newlines | truncate: 250 }}{% endif %}</p>
-      	</li>
-  	  {% endif %}	
-    {% endfor %}
+    {% assign filtered_posts = site.posts | where: "categories", page.category %}
+
+    {% paginate filtered_posts by 5 %}
+      {% for post in paginator.posts %}
+        <li>
+          <span class="date">{{ post.date | date: '%B %d, %Y' }}</span>
+          <h3><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+          <p class="description">{% if post.description %}{{ post.description | strip_html | strip_newlines | truncate: 250 }}{% else %}{{ post.content | strip_html | strip_newlines | truncate: 250 }}{% endif %}</p>
+        </li>
+      {% endfor %}
+    {% endpaginate %}
   </ul>
+
   <!-- Pagination links -->
   <div class="pagination">
     {% if paginator.previous_page %}
