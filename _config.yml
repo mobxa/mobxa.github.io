@@ -5,6 +5,8 @@ url: https://mobxa.github.io
 baseurl: ""
 permalink: blog/:title/
 
+theme: jekyll-theme-minimal
+
 markdown: kramdown
 highlighter: rouge
 gems: [jekyll-paginate]
