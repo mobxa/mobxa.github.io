@@ -10,9 +10,13 @@ theme: jekyll-theme-minimal
 markdown: kramdown
 highlighter: rouge
 gems: [jekyll-paginate]
+
 paginate: 5
 paginate_path: "/page:num/"
-
+pagination:
+  enabled: true
+  per_page: 5
+  
 navigation:
  - title: Home
    url: /index.html
