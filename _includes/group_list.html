@@ -28,12 +28,12 @@
   {% for group in include.groups %}
     {% assign group_name = group | first %}
     {% unless group_name == "collections" %}
-      <section class="showcase col-lg-9 col-lg-offset-1 {% if groupIdx > 0 %} hide {% else %} current {% endif %}" data-show="{{ group | first }}">
+      <div class="blog-posts hfeed index-post-wrap {% if groupIdx > 0 %} hide {% else %} current {% endif %}" data-show="{{ group | first }}" id="post-list">
         {% for posts in group %}
             {% include post_list.html posts=posts groupIdx=groupIdx %}
             {% assign groupIdx = groupIdx | plus: 1 %}
         {% endfor %}
-      </section>
+      </div>
     {% endunless %}
   {% endfor %}
 </div>
