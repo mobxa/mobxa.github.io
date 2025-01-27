@@ -1,15 +1,11 @@
 {% if paginator %}
     {% for post in paginator.posts %}
-<div class="blog-posts hfeed index-post-wrap" id="post-list">
         {% include post_list_item.html %}
-</div>
     {% endfor %}
 {% else %}
     {% for post in include.posts %}
         {% if post.tags or post.category %}
-<div class="blog-posts hfeed index-post-wrap" id="post-list">
         {% include post_list_item.html %}
-</div>
             {% assign displayPagi = true %}
         {% endif %}
     {% endfor %}
