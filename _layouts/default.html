@@ -1,24 +1,30 @@
+---
+layout: compress
+---
 <!DOCTYPE html>
-<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
-<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" <![endif]-->
-<!--[if IE 8]><html class="no-js lt-ie9" <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html>
+<head>
+  {% include head.html %}
+</head>
 
-{% include head.html %}
+<!-- bare layout means not header and footer
+  like resume
+-->
+{% unless layout.bare %}
+  <body>
+    {% include header.html %}
 
-<body>
-
-   {% include header.html %}
-
-   <div class="content">
+    <section id="l-main">
       <div class="container">
-         {{ content }}
+        {% include search_result.html %}
+        {{ content }}
       </div>
-   </div><!-- end .content -->
+    </section>
 
-   {% include footer.html %}
-   {% include scripts.html %}
-
-</body>
+    {% include footer.html %}
+  </body>
+{% else %}
+  {{ content }}
+{% endunless %}
 
 </html>
