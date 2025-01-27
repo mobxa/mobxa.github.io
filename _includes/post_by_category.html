@@ -1,22 +1,17 @@
 ---
 layout: default
 ---
-{% paginate site.posts by 5 %}
-  <ul>
-    {% for post in paginator.posts %}
-      <li>
-        <h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
-        <p>{{ post.excerpt }}</p>
-      </li>
-    {% endfor %}
-  </ul>
+{% for post in paginator.posts %}
+  <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+  <p>{{ post.excerpt }}</p>
+{% endfor %}
 
-  <div class="pagination">
-    {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}">Newer Posts</a>
-    {% endif %}
-    {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path | prepend: site.baseurl }}">Older Posts</a>
-    {% endif %}
-  </div>
-{% endpaginate %}
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}">Previous</a>
+  {% endif %}
+  
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}">Next</a>
+  {% endif %}
+</div>
